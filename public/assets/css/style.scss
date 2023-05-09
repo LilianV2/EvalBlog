@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+$navColor: #B0AFC9;
+$subNavColor: #818094;
+$linksColor: #2F1160;
+$cards: #e1e1e1;
+$mainColor: #ffffff;
+$secColor: #F5F3F8;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: $linksColor;
+  font-family: Goldman, cursive, sans-serif;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+html {
+  font-size: 62.5%
+}
+
+section {
+  margin-top: 9rem;
+}
+
+header {
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: $navColor;
+    padding: 1.2rem;
+    z-index: 1000;
+    margin-bottom: 2rem;
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      padding-left: 15vw;
+      padding-right: 15vw;
+      justify-content: space-evenly;
+
+      li {
+        position: relative;
+        text-align: center;
+
+        a {
+          display: block;
+          padding: 12px 10px;
+          color: $linksColor;
+          text-decoration: none;
+          font-size: 2.5rem;
+          transition-property: font-size;
+          transition-duration: 500ms;
+          transition-delay: 40ms;
+
+          &:hover {
+            font-size: 3rem;
+          }
+
+          &#title {
+            font-size: 4rem;
+            color: #ffffff;
+            transition-property: font-size;
+            transition-duration: 500ms;
+            transition-delay: 40ms;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#container {
+  width: 99vw;
+  height: 150vh;
+  background: $mainColor;
+
+  section {
+    &.home {
+      display: flex;
+      height: 60%;
+      width: 100%;
+      margin-top: 9rem;
+
+      div {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+
+        h1 {
+          font-size: 5rem;
+          margin-bottom: 2rem;
+        }
+
+        p {
+          font-size: 3rem;
+        }
+
+        &.home-img {
+          background: $cards;
+        }
+      }
+    }
+
+
+      }
+    }
+
+    &.info-home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 65%;
+      width: 99vw;
+      font-size: 2rem;
+      background: $secColor;
+
+      .info-home-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+        height: 80%;
+
+        .info-cards {
+          display: flex;
+          padding: 4rem 8rem 2rem 8rem;
+          flex-direction: column;
+          width: 50%;
+          height: 50%;
+
+          hr {
+            margin: 1rem 0 1rem 0;
+            border: 1px solid $linksColor;
+          }
+
+          .fa-solid {
+            font-size: 2rem;
+            padding-bottom: 1rem;
+            align-self: self-start;
+            color: $linksColor;
+          }
+        }
+      }
+    }
+
+  .home-contact {
+    height: 40%;
+    width: 99vw;
+    background: $mainColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem 0 3rem 0;
+
+    h1 {
+      font-size: 4rem;
+      padding-bottom: 2rem;
+    }
+
+    p {
+      font-size: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    button {
+      width: 15%;
+      height: 12%;
+      background: $mainColor;
+      border: 3px solid $linksColor;
+      border-radius: 5px;
+      font-size: 2.4rem;
+      font-weight: bolder;
+      cursor: pointer;
+      margin: 4rem 0 1rem 0;
+    }
+  }
+
+  footer {
+    height: 20%;
+    background: $mainColor;
+
+    .last-footer {
+      height: 20%;
+      background: $mainColor;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 1rem;
+      color: $linksColor;
+
+      p i.fa-brands {
+        cursor: pointer;
+        padding: 0.5rem;
+        font-size: 2rem;
+        transition-property: font-size;
+        transition-duration: 1s;
+        transition-delay: 140ms;
+
+        &:hover {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+.article_container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 40%;
+  color: $linksColor;
+  font-size: 1rem;
+  margin-top: 15rem;
+
+  .article_item {
+    display: flex;
+    width: 45%;
+    background: $secColor;
+
+    .info_article {
+      display: flex;
+      flex-direction: column;
+      font-size: 2rem;
+      padding: 2rem;
+      margin: 2rem;
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      hr {
+        width: 90%;
+        margin: 2rem 0 2rem 0;
+      }
+
+      p {
+        margin-bottom: 2rem;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.login-box {
+  width: 60%;
+  background: $secColor;
+  margin: 15rem 0 0 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form-login {
+    padding: 5rem 0 5rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2.5rem;
+    gap: 1rem;
+
+    hr {
+      width: 100%;
+      margin: 2rem 0 2rem 0;
+    }
+
+    .send-login {
+      padding: 1rem;
+      color: $linksColor;
+      font-size: 2rem;
+      width: 40%;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    .btn-register {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      color: $secColor;
+      background: $linksColor;
+      font-size: 2rem;
+      width: 40%;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+  }
+}
+
+.register-box {
+  width: 60%;
+  background: $secColor;
+  margin: 15rem 0 0 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form-register {
+    padding: 5rem 0 5rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2.5rem;
+    gap: 1rem;
+    hr {
+      width: 100%;
+      margin: 2rem 0 2rem 0;
+    }
+    .send-register {
+      padding: 1rem;
+      color: $linksColor;
+      font-size: 2rem;
+      width: 60%;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+  }
+}
