@@ -26,7 +26,8 @@ html {
 }
 
 section {
-  margin-top: 9rem;
+  display: flex;
+  justify-content: center;
 }
 
 header {
@@ -115,106 +116,77 @@ header {
     }
 
 
-      }
-    }
+  }
+}
 
-    &.info-home {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 65%;
-      width: 99vw;
-      font-size: 2rem;
-      background: $secColor;
+.info-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65%;
+  width: 99vw;
+  font-size: 2rem;
+  background: $secColor;
 
-      .info-home-cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 80%;
-        height: 80%;
-
-        .info-cards {
-          display: flex;
-          padding: 4rem 8rem 2rem 8rem;
-          flex-direction: column;
-          width: 50%;
-          height: 50%;
-
-          hr {
-            margin: 1rem 0 1rem 0;
-            border: 1px solid $linksColor;
-          }
-
-          .fa-solid {
-            font-size: 2rem;
-            padding-bottom: 1rem;
-            align-self: self-start;
-            color: $linksColor;
-          }
-        }
-      }
-    }
-
-  .home-contact {
-    height: 40%;
-    width: 99vw;
-    background: $mainColor;
+  .info-home-cards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 3rem 0 3rem 0;
+    width: 80%;
+    height: 80%;
 
-    h1 {
-      font-size: 4rem;
-      padding-bottom: 2rem;
-    }
+    .info-cards {
+      display: flex;
+      padding: 4rem 8rem 2rem 8rem;
+      flex-direction: column;
+      width: 50%;
+      height: 50%;
 
-    p {
-      font-size: 2rem;
-      padding-bottom: 2rem;
-    }
+      hr {
+        margin: 1rem 0 1rem 0;
+        border: 1px solid $linksColor;
+      }
 
-    button {
-      width: 15%;
-      height: 12%;
-      background: $mainColor;
-      border: 3px solid $linksColor;
-      border-radius: 5px;
-      font-size: 2.4rem;
-      font-weight: bolder;
-      cursor: pointer;
-      margin: 4rem 0 1rem 0;
+      .fa-solid {
+        font-size: 2rem;
+        padding-bottom: 1rem;
+        align-self: self-start;
+        color: $linksColor;
+      }
     }
   }
+}
 
-  footer {
-    height: 20%;
+.home-contact {
+  height: 40%;
+  width: 99vw;
+  background: $mainColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 3rem 0 3rem 0;
+
+  h1 {
+    font-size: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  p {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  button {
+    width: 15%;
+    height: 12%;
     background: $mainColor;
-
-    .last-footer {
-      height: 20%;
-      background: $mainColor;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      font-size: 1rem;
-      color: $linksColor;
-
-      p i.fa-brands {
-        cursor: pointer;
-        padding: 0.5rem;
-        font-size: 2rem;
-        transition-property: font-size;
-        transition-duration: 1s;
-        transition-delay: 140ms;
-
-        &:hover {
-          font-size: 3rem;
-        }
-      }
-    }
+    border: 3px solid $linksColor;
+    border-radius: 5px;
+    font-size: 2.4rem;
+    font-weight: bolder;
+    cursor: pointer;
+    margin: 4rem 0 1rem 0;
   }
 }
 
@@ -259,76 +231,204 @@ header {
   }
 }
 
-.login-box {
-  width: 60%;
-  background: $secColor;
-  margin: 15rem 0 0 30rem;
+.login-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 
-  .form-login {
-    padding: 5rem 0 5rem 0;
+  .info-log {
+    color: $linksColor;
+    font-size: 2rem;
+    width: 28%;
+    background: $cards;
+    margin-top: 15rem;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    font-size: 2.5rem;
-    gap: 1rem;
+    align-items: center;
+    padding: 4rem 3rem 4rem 3rem;
+    border-radius: 7px;
+
+    h1 {
+      font-size: 3rem;
+    }
 
     hr {
-      width: 100%;
+      width: 90%;
       margin: 2rem 0 2rem 0;
+      opacity: 40%;
     }
+  }
 
-    .send-login {
-      padding: 1rem;
-      color: $linksColor;
-      font-size: 2rem;
-      width: 40%;
-      border-radius: 7px;
-      cursor: pointer;
-    }
+  .register-box {
+    width: 24%;
+    background: $cards;
+    margin-top: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
 
-    .btn-register {
+    .form-register {
+      padding: 5rem 0 5rem 0;
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 1rem;
-      color: $secColor;
-      background: $linksColor;
-      font-size: 2rem;
-      width: 40%;
-      border-radius: 7px;
-      cursor: pointer;
+      flex-direction: column;
+      font-size: 2.5rem;
+      gap: 1rem;
+
+      hr {
+        width: 100%;
+        margin: 2rem 0 2rem 0;
+      }
+
+      .send-register {
+        padding: 1rem;
+        color: $linksColor;
+        font-size: 2rem;
+        width: 60%;
+        border-radius: 7px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .login-box {
+    width: 28%;
+    background: $cards;
+    margin-top: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+
+
+    .form-login {
+      padding: 4rem 0 4rem 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      font-size: 2.5rem;
+      gap: 1rem;
+
+      hr {
+        width: 80%;
+        margin: 2rem 0 2rem 0;
+        opacity: 40%;
+      }
+
+      .send-login {
+        padding: 1rem;
+        color: $linksColor;
+        font-size: 2rem;
+        width: 40%;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-bottom: 4rem;
+      }
+
+      .btn-register {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        color: $cards;
+        background: $linksColor;
+        font-size: 2rem;
+        width: 40%;
+        border-radius: 7px;
+        cursor: pointer;
+      }
     }
   }
 }
 
-.register-box {
-  width: 60%;
-  background: $secColor;
-  margin: 15rem 0 0 30rem;
-  display: flex;
-  justify-content: center;
+.create-article {
+  margin: 3rem 0 10rem 0;
+  display: none;
+  flex-direction: column;
   align-items: center;
-  .form-register {
-    padding: 5rem 0 5rem 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-size: 2.5rem;
-    gap: 1rem;
-    hr {
-      width: 100%;
-      margin: 2rem 0 2rem 0;
+  background: $cards;
+  width: 50%;
+  height: 90%;
+  font-size: 3rem;
+  padding: 4rem;
+  border-radius: 7px;
+  box-shadow: 2px 2px 8px rgba(black, .3);
+
+  input {
+    margin-top: 3rem;
+    border: none;
+    height: 50px;
+    font-size: 2rem;
+    padding: 1rem;
+    box-shadow: 2px 2px 8px rgba(black, .2);
+    border-radius: 7px;
+
+    .title {
+      width: 25%;
     }
-    .send-register {
-      padding: 1rem;
-      color: $linksColor;
-      font-size: 2rem;
-      width: 60%;
-      border-radius: 7px;
+
+  }
+
+  hr {
+    width: 80%;
+    opacity: 40%;
+    margin: 2rem 0 2rem 0;
+  }
+
+  textarea {
+    resize: none;
+    display: block;
+    overflow: hidden;
+    padding: 10px;
+    width: 550px;
+    font-size: 2rem;
+    margin: 1rem 0 1rem 0;
+    border-radius: 6px;
+    box-shadow: 2px 2px 8px rgba(black, .3);
+    border: 0;
+  }
+
+  #close-btn {
+    width: 10%;
+    height: 8%;
+    background: $mainColor;
+    border: 3px solid $linksColor;
+    border-radius: 5px;
+    font-size: 2rem;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+}
+
+footer {
+
+  height: 20%;
+  background: $mainColor;
+
+  .last-footer {
+    margin-top: 20rem;
+    position: static;
+    bottom: 0;
+    height: 20%;
+    background: $mainColor;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
+    color: $linksColor;
+
+    p i.fa-brands {
       cursor: pointer;
+      padding: 0.5rem;
+      font-size: 2rem;
+      transition-property: font-size;
+      transition-duration: 1s;
+      transition-delay: 140ms;
+
+      &:hover {
+        font-size: 3rem;
+      }
     }
   }
 }

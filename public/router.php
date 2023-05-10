@@ -13,7 +13,8 @@ $router->map('GET', '/home', 'RootController#index', 'home');
 $router->map('GET', '/', 'RootController#index', 'root');
 $router->map('GET', '/user', 'UserController#index', 'user');
 
-$router->map('GET', '/article', 'ArticlesController#index', 'articles');
+$router->map('GET', '/article/view[i:id]', 'ArticlesController#view', 'articles');
+$router->map('POST', '/articles/createArticles', 'AdminController#createArticles', 'create');
 
 $router->map('GET', '/login', 'LoginController#index', 'login');
 $router->map('POST', '/log', 'LoginController#log', 'log');

@@ -46,8 +46,18 @@
     </section>
     <section class="home-contact">
         <h1>Vos articles n'attendent qu'à être écrits !</h1>
-        <p>Envie de publier un article ? C'est très simple, cliquez sur le bouton ci-dessous, et libre à vous de vous exprimer !</p>
-        <button><a href="/article">Publier un article</a></button>
+        <p>Envie de publier un article ? C'est très simple, cliquez sur le bouton ci-dessous, et libre à vous de vous
+            exprimer !</p>
+        <button id="create-article-btn">Publier un article</button>
+        <form action="/articles/createArticles" class="create-article" method="post">
+            <label for="title">Sujet de l'article</label>
+            <input type="text" name="title" id="title">
+            <hr>
+            <label for="content">Contenu</label>
+            <textarea name="content" id="content" placeholder="A vos clavier !" rows='7' data-min-rows='7'></textarea>
+            <input type="submit" value="Valider mon article" class="send-article">
+            <button id="close-btn">Fermer</button>
+        </form>
     </section>
     <footer>
         <section class="last-footer">

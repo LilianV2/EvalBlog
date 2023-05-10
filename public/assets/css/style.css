@@ -18,7 +18,8 @@ html {
 }
 
 section {
-  margin-top: 9rem;
+  display: flex;
+  justify-content: center;
 }
 
 header nav {
@@ -92,44 +93,8 @@ header nav ul li a#title {
 #container section.home div.home-img {
   background: #e1e1e1;
 }
-#container section.home-portfolio {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  height: 55%;
-  background: #ffffff;
-}
-#container section.home-portfolio div.port-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#container section.home-portfolio div.port-title h1 {
-  font-size: 5rem;
-}
-#container section.home-portfolio div.port-creations {
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 40%;
-  width: 100%;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-#container section.home-portfolio div.port-creations div.port-items {
-  width: 15%;
-  height: 100%;
-  border-radius: 7px;
-  background: #e1e1e1;
-  margin: 0 10px 0 10px;
-  transition: width 300ms ease-in 0ms;
-}
-#container section.home-portfolio div.port-creations div.port-items:hover {
-  width: 16%;
-}
-#container section.info-home {
+
+.info-home {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,31 +103,32 @@ header nav ul li a#title {
   font-size: 2rem;
   background: #F5F3F8;
 }
-#container section.info-home .info-home-cards {
+.info-home .info-home-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 80%;
   height: 80%;
 }
-#container section.info-home .info-home-cards .info-cards {
+.info-home .info-home-cards .info-cards {
   display: flex;
   padding: 4rem 8rem 2rem 8rem;
   flex-direction: column;
   width: 50%;
   height: 50%;
 }
-#container section.info-home .info-home-cards .info-cards hr {
+.info-home .info-home-cards .info-cards hr {
   margin: 1rem 0 1rem 0;
   border: 1px solid #2F1160;
 }
-#container section.info-home .info-home-cards .info-cards .fa-solid {
+.info-home .info-home-cards .info-cards .fa-solid {
   font-size: 2rem;
   padding-bottom: 1rem;
   align-self: self-start;
   color: #2F1160;
 }
-#container .home-contact {
+
+.home-contact {
   height: 40%;
   width: 99vw;
   background: #ffffff;
@@ -172,15 +138,15 @@ header nav ul li a#title {
   flex-direction: column;
   margin: 3rem 0 3rem 0;
 }
-#container .home-contact h1 {
+.home-contact h1 {
   font-size: 4rem;
   padding-bottom: 2rem;
 }
-#container .home-contact p {
+.home-contact p {
   font-size: 2rem;
   padding-bottom: 2rem;
 }
-#container .home-contact button {
+.home-contact button {
   width: 15%;
   height: 12%;
   background: #ffffff;
@@ -190,30 +156,6 @@ header nav ul li a#title {
   font-weight: bolder;
   cursor: pointer;
   margin: 4rem 0 1rem 0;
-}
-#container footer {
-  height: 20%;
-  background: #ffffff;
-}
-#container footer .last-footer {
-  height: 20%;
-  background: #ffffff;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 1rem;
-  color: #2F1160;
-}
-#container footer .last-footer p i.fa-brands {
-  cursor: pointer;
-  padding: 0.5rem;
-  font-size: 2rem;
-  transition-property: font-size;
-  transition-duration: 1s;
-  transition-delay: 140ms;
-}
-#container footer .last-footer p i.fa-brands:hover {
-  font-size: 3rem;
 }
 
 .article_container {
@@ -251,15 +193,41 @@ header nav ul li a#title {
   font-style: italic;
 }
 
-.login-box {
-  width: 60%;
-  background: #F5F3F8;
-  margin: 15rem 0 0 30rem;
+.login-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.login-container .info-log {
+  color: #2F1160;
+  font-size: 2rem;
+  width: 28%;
+  background: #e1e1e1;
+  margin-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 3rem 4rem 3rem;
+  border-radius: 7px;
+}
+.login-container .info-log h1 {
+  font-size: 3rem;
+}
+.login-container .info-log hr {
+  width: 90%;
+  margin: 2rem 0 2rem 0;
+  opacity: 40%;
+}
+.login-container .register-box {
+  width: 24%;
+  background: #e1e1e1;
+  margin-top: 15rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 7px;
 }
-.login-box .form-login {
+.login-container .register-box .form-register {
   padding: 5rem 0 5rem 0;
   display: flex;
   align-items: center;
@@ -267,24 +235,55 @@ header nav ul li a#title {
   font-size: 2.5rem;
   gap: 1rem;
 }
-.login-box .form-login hr {
+.login-container .register-box .form-register hr {
   width: 100%;
   margin: 2rem 0 2rem 0;
 }
-.login-box .form-login .send-login {
+.login-container .register-box .form-register .send-register {
+  padding: 1rem;
+  color: #2F1160;
+  font-size: 2rem;
+  width: 60%;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.login-container .login-box {
+  width: 28%;
+  background: #e1e1e1;
+  margin-top: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+}
+.login-container .login-box .form-login {
+  padding: 4rem 0 4rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2.5rem;
+  gap: 1rem;
+}
+.login-container .login-box .form-login hr {
+  width: 80%;
+  margin: 2rem 0 2rem 0;
+  opacity: 40%;
+}
+.login-container .login-box .form-login .send-login {
   padding: 1rem;
   color: #2F1160;
   font-size: 2rem;
   width: 40%;
   border-radius: 7px;
   cursor: pointer;
+  margin-bottom: 4rem;
 }
-.login-box .form-login .btn-register {
+.login-container .login-box .form-login .btn-register {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  color: #F5F3F8;
+  color: #e1e1e1;
   background: #2F1160;
   font-size: 2rem;
   width: 40%;
@@ -292,33 +291,85 @@ header nav ul li a#title {
   cursor: pointer;
 }
 
-.register-box {
-  width: 60%;
-  background: #F5F3F8;
-  margin: 15rem 0 0 30rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.register-box .form-register {
-  padding: 5rem 0 5rem 0;
-  display: flex;
-  align-items: center;
+.create-article {
+  margin: 3rem 0 10rem 0;
+  display: none;
   flex-direction: column;
-  font-size: 2.5rem;
-  gap: 1rem;
+  align-items: center;
+  background: #e1e1e1;
+  width: 50%;
+  height: 90%;
+  font-size: 3rem;
+  padding: 4rem;
+  border-radius: 7px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
-.register-box .form-register hr {
-  width: 100%;
+.create-article input {
+  margin-top: 3rem;
+  border: none;
+  height: 50px;
+  font-size: 2rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+}
+.create-article input .title {
+  width: 25%;
+}
+.create-article hr {
+  width: 80%;
+  opacity: 40%;
   margin: 2rem 0 2rem 0;
 }
-.register-box .form-register .send-register {
-  padding: 1rem;
-  color: #2F1160;
+.create-article textarea {
+  resize: none;
+  display: block;
+  overflow: hidden;
+  padding: 10px;
+  width: 550px;
   font-size: 2rem;
-  width: 60%;
-  border-radius: 7px;
+  margin: 1rem 0 1rem 0;
+  border-radius: 6px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  border: 0;
+}
+.create-article #close-btn {
+  width: 10%;
+  height: 8%;
+  background: #ffffff;
+  border: 3px solid #2F1160;
+  border-radius: 5px;
+  font-size: 2rem;
+  font-weight: bolder;
   cursor: pointer;
+}
+
+footer {
+  height: 20%;
+  background: #ffffff;
+}
+footer .last-footer {
+  margin-top: 20rem;
+  position: static;
+  bottom: 0;
+  height: 20%;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1rem;
+  color: #2F1160;
+}
+footer .last-footer p i.fa-brands {
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 2rem;
+  transition-property: font-size;
+  transition-duration: 1s;
+  transition-delay: 140ms;
+}
+footer .last-footer p i.fa-brands:hover {
+  font-size: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */
