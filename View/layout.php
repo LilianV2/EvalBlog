@@ -16,7 +16,11 @@
             <li><a href="/article">Topics</a></li>
             <li><a href="/home" id="title">BLOG</a></li>
             <li><a href="#">A propos</a></li>
-            <li><a href="/login">Se connecter</a></li>
+            <?php if (isset($_SESSION["connected"]) && $_SESSION["connected"]) : ?>
+                <li><a href="/logout">Déconnexion</a></li>
+            <?php else: ?>
+                <li><a href="/login">Se connecter</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 </header>

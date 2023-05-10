@@ -51,8 +51,8 @@ class LoginController extends AbstractController
         $sql = "SELECT id, pseudo, password, email, is_admin FROM user WHERE email = :email";
         $req = DB::getInstance()->prepare($sql);
 
-        $email = strip_tags($_POST['email_login'] ?? ''); // Supprime toutes les balises HTML potentiellement dangereuses
-        $pass_form = strip_tags($_POST['password_login'] ?? ''); // Récupère le mot de passe entré dans le formulaire et supprime les balises HTML potentiellement dangereuses
+        $email = strip_tags($_POST['email'] ?? ''); // Supprime toutes les balises HTML potentiellement dangereuses
+        $pass_form = strip_tags($_POST['password'] ?? ''); // Récupère le mot de passe entré dans le formulaire et supprime les balises HTML potentiellement dangereuses
 
         $req->bindParam(':email', $email);
 
@@ -78,8 +78,6 @@ class LoginController extends AbstractController
                         header("Location: /home");
 
                         echo("<div> Vous vous êtes login avec succès ! </div>");
-                        echo "<script>setTimeout(function(){ document.querySelector('.warning').style.display = 'none'; }, 15000);</script>";
-
                     } else {
                         echo("<div> Mot de passe incorrect.. </div>");
                         $this->display('login/login');

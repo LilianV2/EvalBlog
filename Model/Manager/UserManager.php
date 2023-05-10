@@ -31,6 +31,26 @@ class UserManager
         return $users;
     }
 
+    public function isAdmin(User $user): bool {
+        if ($user->isAdmin()) {
+            // Si la propriété $is_admin de l'objet User est true,
+            // alors on retourne true sans interroger la base de données.
+            return true;
+        } else {
+            if (isset($_SESSION["connected"]) && $_SESSION["connected"]) {
+                $id = $_SESSION['user']['id_user']; // Récupère l'id depuis la session
+                $userConnected = $this->getUserById($id);
+                if ($userConnected && $userConnected->isAdmin()) {
+                    // Si l'utilisateur a le rôle d'administrateur enregistré en BDD,
+                    // alors on met à jour la propriété $is_admin de l'objet User
+                    $user->setIsAdmin(true);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
     /**
      * Return a simple user.

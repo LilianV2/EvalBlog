@@ -1,5 +1,5 @@
 <div class="login-box">
-    <form action="log" method="post" class="form-login">
+    <form action="/log" method="POST" class="form-login">
         <label for="email">Saisissez votre adresse mail :</label>
         <input required type="email" id="email" name="email">
         <hr>

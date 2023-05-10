@@ -13,14 +13,16 @@ $router->map('GET', '/home', 'RootController#index', 'home');
 $router->map('GET', '/', 'RootController#index', 'root');
 $router->map('GET', '/user', 'UserController#index', 'user');
 
-
 $router->map('GET', '/article', 'ArticlesController#index', 'articles');
-$router->map('GET', '/login', 'LoginController#index', 'login');
 
+$router->map('GET', '/login', 'LoginController#index', 'login');
 $router->map('POST', '/log', 'LoginController#log', 'log');
+$router->map('GET', '/logout', 'LoginController#logout', 'logout');
 
 $router->map('POST', '/reg', 'LoginController#register', 'reg');
 $router->map('GET', '/register', 'LoginController#indexRegister', 'register');
+
+
 
 
 
