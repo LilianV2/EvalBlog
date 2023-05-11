@@ -28,8 +28,8 @@ $router->map('GET', '/articles/view/[i:id]', 'ArticlesController#view', 'article
 $router->map('POST', '/articles/modifyArticle/[i:id]', 'AdminController#modifyArticle', 'modifyArticle');
 $router->map('GET', '/articles/modifyArticle/[i:id]', 'AdminController#viewModify', 'article_modify');
 
-
-
+$router->map('GET', '/deleteArticle', 'AdminController#pageDeleteArticle', 'deleteArticle');
+$router->map('GET', '/articles/delete/[i:id]', 'AdminController#deleteArticle', 'article_delete');
 // Fonction
 
 

@@ -26,6 +26,16 @@ class ArticlesController extends AbstractController
             'article' => $article,
         ]);
     }
+    public function delete($id)
+    {
+        $manager = new ArticleManager();
+
+        $article = $manager->getArticleById($id);
+
+        $this->display('admin/deleteArticle', [
+            'article' => $article,
+        ]);
+    }
 
     public function sendMessage($id)
     {

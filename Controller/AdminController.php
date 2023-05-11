@@ -25,7 +25,7 @@ class AdminController extends AbstractController
     public function pageDeleteArticle()
     {
         $manager = new ArticleManager();
-        $this->display('admin/article/delete', [
+        $this->display('admin/deleteArticle', [
             'articles' => $manager->getAll(),
         ]);
     }
@@ -94,29 +94,7 @@ class AdminController extends AbstractController
         }
     }
 
-
-    public
-    function deleteComment($id)
-    {
-        if (isset($_SESSION["connected"]) && $_SESSION["connected"]) {
-            $comment_id = $id;
-
-            $sql = "DELETE FROM comment WHERE id= :comment_id";
-            $req = DB::getInstance()->prepare($sql);
-
-            $req->bindParam(':comment_id', $comment_id);
-
-            $req->execute();
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
-        } else {
-            echo "<div class='warning'>Vous n'êtes pas login..</div>";
-            echo "<script>setTimeout(function(){ document.querySelector('.warning').style.display = 'none'; }, 4000);</script>";
-            $this->display('login/login');
-        }
-    }
-
-    public
-    function deleteArticle($id)
+    public function deleteArticle($id)
     {
         if (isset($_SESSION["connected"]) && $_SESSION["connected"]) {
             $article_id = $id;

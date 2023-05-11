@@ -423,7 +423,23 @@ header {
     hr {
       width: 90%;
       opacity: 40%;
+      margin: 2rem 0 1rem 0;
+    }
+    .italic {
+      font-style: italic;
+    }
+
+    .modify {
+      color: darkseagreen;
+    }
+
+    .delete {
+      color: indianred;
+    }
+
+    .smallcaps {
       margin: 2rem 0 2rem 0;
+      font-size: 1.8rem;
     }
   }
 }

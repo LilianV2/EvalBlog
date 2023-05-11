@@ -368,7 +368,20 @@ header nav ul li a#title {
 .article-container .article-content hr {
   width: 90%;
   opacity: 40%;
+  margin: 2rem 0 1rem 0;
+}
+.article-container .article-content .italic {
+  font-style: italic;
+}
+.article-container .article-content .modify {
+  color: darkseagreen;
+}
+.article-container .article-content .delete {
+  color: indianred;
+}
+.article-container .article-content .smallcaps {
   margin: 2rem 0 2rem 0;
+  font-size: 1.8rem;
 }
 
 .listeArticle {
