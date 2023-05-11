@@ -9,17 +9,21 @@ use App\Model\Manager\UserManager;
 
 class ArticlesController extends AbstractController
 {
+    public function index()
+    {
+        $manager = new ArticleManager();
+        $this->display('articles/listing', [
+            'article' => $manager->getAll()
+        ]);
+    }
     public function view($id)
     {
         $manager = new ArticleManager();
-        $comment = new CommentManager();
 
         $article = $manager->getArticleById($id);
-        $comments = $comment->getCommentById($id);
 
-        $this->display('articles/listing', [
+        $this->display('admin/modifyArticle', [
             'article' => $article,
-            'comment' => $comments,
         ]);
     }
 

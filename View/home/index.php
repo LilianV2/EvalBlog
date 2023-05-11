@@ -55,7 +55,7 @@
             <hr>
             <label for="content">Contenu</label>
             <textarea name="content" id="content" placeholder="A vos clavier !" rows='7' data-min-rows='7'></textarea>
-            <input type="submit" value="Valider mon article" class="send-article">
+            <input type="submit" value="Valider mon article" class="send-article" name="create_content">
             <button id="close-btn">Fermer</button>
         </form>
     </section>

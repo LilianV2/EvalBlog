@@ -344,6 +344,69 @@ header nav ul li a#title {
   cursor: pointer;
 }
 
+.article-container {
+  margin-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 95%;
+  height: 100%;
+  background: #ffffff;
+  font-size: 2rem;
+}
+.article-container .article-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 2rem 4rem;
+  width: 95%;
+  margin-bottom: 5rem;
+  background: #e1e1e1;
+}
+.article-container .article-content h1 {
+  font-size: 3rem;
+}
+.article-container .article-content hr {
+  width: 90%;
+  opacity: 40%;
+  margin: 2rem 0 2rem 0;
+}
+
+.listeArticle {
+  margin-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  width: 50%;
+  height: 80%;
+  background: #e1e1e1;
+  font-size: 2rem;
+}
+.listeArticle h1 {
+  margin: 2rem;
+}
+.listeArticle hr {
+  width: 90%;
+  opacity: 40%;
+  margin: 0 0 2rem 0;
+}
+.listeArticle textarea {
+  resize: none;
+  display: block;
+  overflow: hidden;
+  padding: 10px;
+  width: 650px;
+  font-size: 2rem;
+  margin: 1rem 0 1rem 0;
+  border-radius: 6px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  border: 0;
+}
+.listeArticle input {
+  margin-left: 8rem;
+}
+
 footer {
   height: 20%;
   background: #ffffff;

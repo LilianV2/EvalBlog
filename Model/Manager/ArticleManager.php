@@ -16,7 +16,7 @@ class ArticleManager
         if ($request) {
             $data = $request->fetchAll();
             foreach ($data as $articleData) {
-                $author = (new UserManager())->getUserById($articleData['user-id']);
+                $author = (new UserManager())->getUserById($articleData['user_id']);
                 $articles[] = (new Article())
                     ->setId($articleData['id'])
                     ->setContent($articleData['content'])
@@ -37,7 +37,7 @@ class ArticleManager
         if($stmt->execute()) {
             $data = $stmt->fetchAll();
             foreach ($data as $articleData) {
-                $author = (new UserManager())->getUserById($articleData['user-id']);
+                $author = (new UserManager())->getUserById($articleData['user_id']);
                 return (new Article())
                     ->setId($articleData['id'])
                     ->setContent($articleData['content'])

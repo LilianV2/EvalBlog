@@ -38,7 +38,7 @@ class AdminController extends AbstractController
         $article = $manager->getArticleById($id);
         $comments = $comment->getCommentById($id);
 
-        $this->display('admin/article/modify', [
+        $this->display('admin/modifyArticle', [
             'article' => $article,
             'comment' => $comments,
         ]);
@@ -74,8 +74,7 @@ class AdminController extends AbstractController
         header('Location: /login');
     }
 
-    public
-    function modifyArticle($id)
+    public function modifyArticle($id)
     {
         if (isset($_SESSION["connected"]) && $_SESSION["connected"]) {
             $article_id = $id;
@@ -91,7 +90,6 @@ class AdminController extends AbstractController
             header('Location: ' . $_SERVER['HTTP_REFERER']);
         } else {
             echo "<div class='warning'>Vous n'êtes pas login..</div>";
-            echo "<script>setTimeout(function(){ document.querySelector('.warning').style.display = 'none'; }, 4000);</script>";
             $this->display('login/login');
         }
     }
@@ -129,7 +127,7 @@ class AdminController extends AbstractController
             $req->bindParam(':article_id', $article_id);
 
             $req->execute();
-            header('Location: /admin');
+            header('Location: /articles');
 
         } else {
 

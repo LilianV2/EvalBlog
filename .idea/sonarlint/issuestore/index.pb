@@ -15,8 +15,6 @@ Z
 *vendor/altorouter/altorouter/composer.json,4\4\44dc966bf8427f1b3a2b25294f40eaab4cde3fe9
 B
 View/error/404.php,9\d\9df7bdd1582b9da7dd7c28f0769dbbee6dde43e4
-Q
-!Controller/AbstractController.php,0\9\0961de1ff07c85c36bc5d01726ea246aeccc9ffe
 [
 +vendor/altorouter/altorouter/AltoRouter.php,7\1\719857c81a5feba54587e1ae38ec5560275f61d1
 C
@@ -47,3 +45,15 @@ E
 View/user/listing.php,d\0\d06cc2eec4d35ca4c08600e82578733d0b794993
 R
 "vendor/composer/platform_check.php,1\2\12a7f430b28be9061c2785aed610d83e5c0f1cdc
+E
+Model/Entity/User.php,d\3\d32f2107305f1dce1b26e5b7a1c2e416b0de594b
+@
+public/index.php,0\e\0e61f67641b441bb3ee38e903c594d99cafa14b4
+H
+Model/Entity/Comment.php,e\e\ee80a6be8000a1a147c8d14d4982b1bc73ce60f3
+N
+Controller/LoginController.php,8\6\860d2cc2b534c88e304371151308f5f1f874faf2
+D
+View/login/login.php,9\2\92032379b3710c24918fd8e3f9d1d5c52233663d
+G
+View/login/register.php,3\8\38fa226e2ac1348b1216131397e3890dd2f44480

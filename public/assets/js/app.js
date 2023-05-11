@@ -1,7 +1,9 @@
 
-btn = document.getElementById("create-article-btn");
-closeBtn = document.getElementById('close-btn');
-form = document.querySelector(".create-article");
+let btn = document.getElementById("create-article-btn");
+let closeBtn = document.getElementById('close-btn');
+let form = document.querySelector(".create-article");
+
+// Display the form when on-click to create an Article
 
 btn.addEventListener("click", function (){
     form.style.display = "flex";
@@ -10,3 +12,4 @@ btn.addEventListener("click", function (){
 closeBtn.addEventListener("click", function (){
     form.style.display = "none";
 })
+

@@ -13,7 +13,7 @@
     <nav>
         <ul>
             <li><a href="/home">Home</a></li>
-            <li><a href="/article">Topics</a></li>
+            <li><a href="/articles">Topics</a></li>
             <li><a href="/home" id="title">BLOG</a></li>
             <li><a href="#">A propos</a></li>
             <?php if (isset($_SESSION["connected"]) && $_SESSION["connected"]) : ?>

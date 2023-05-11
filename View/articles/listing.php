@@ -1,17 +1,16 @@
-<section class="article_container">
+<section class="article-container">
     <?php
-    foreach($params['articles'] as $article) {
+    foreach ($params['article'] as $article) {
         /* @var User $user */ ?>
-        <div class="article_item">
-            <div class="info_article">
+        <div>
+            <div class="article-content">
                 <h1><?= $article->getTitle() ?></h1>
                 <hr>
                 <p><?= $article->getContent() ?></p>
-                <p>Publié par <span class="italic"><?= $article->getAuthor()->getPseudo()?></span></p>
+                <p><?= $article->getAuthor()->getPseudo() ?></p>
+                <a href="/articles/view/<?= $article->getId() ?>">Modifier l'article</a>
             </div>
         </div>
         <?php
-    }
-    ?>
+    } ?>
 </section>
-
