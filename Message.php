@@ -91,11 +91,13 @@ class Message
         $data = $stmt->fetchAll();
         $messages = [];
         foreach ($data as $message) {
-            $messages[] = (new Message())
-                ->setId($message['id'])
-                ->setContent($message['content'])
-                ->setAuthorId($message['author_id'])
-                ->setTimestamp($message['timestamp']);
+            if ($message != null) {
+                $messages[] = (new Message())
+                    ->setId($message['id'])
+                    ->setContent($message['content'])
+                    ->setAuthorId($message['author_id'])
+                    ->setTimestamp($message['timestamp']);
+            }
         }
         return $messages;
     }

@@ -73,6 +73,44 @@ html {
     flex-flow: column wrap;
 }
 
+.main {
+    margin: 2rem 22rem 0 22rem;
+    background: #ffc684;
+    color: #ffffff;
+    font-size: 2rem;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.main h1 {
+    font-size: 5rem;
+}
+
+.main p {
+    font-size: 2.8rem;
+    color: #fff4ee;
+    line-height: 3.6rem;
+    text-align: justify;
+}
+
+.main hr {
+    width: 85%;
+    border: 1px solid #ffe0c8;
+    margin: 5rem 1rem 4rem 1rem;
+}
+
+.displayFlex {
+    display: flex;
+}
+
+.displayNone {
+    display: none;
+}
+
 .content {
     font-size: 2rem;
 }
@@ -192,7 +230,11 @@ label {
 .setMessage {
     width: 55%;
     height: 10%;
-    background: #ff9c47;
+    background: #ff9030;
     font-size: 2rem;
     color: #ffffff;
+}
+
+.setMessage::placeholder {
+    color: #ffcba9;
 }
