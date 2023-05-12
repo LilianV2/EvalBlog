@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+
+    color: blanchedalmond;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background: #ffe9d7;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*FIN RESET CSS*/
+/*CALIBRAGE PX/REM*/
+html {
+    font-size: 62.5%;
+    font-family: Righteous, sans-serif;
+    font-weight: bold;
+}
+
+/*FIN CALIBRAGE PX/REM*/
+
+.header {
+    max-width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    padding: 3rem;
+    background: #ff9c47;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 7px;
+}
+
+.card {
+    margin: 2rem auto;
+    max-width: 75%;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 2rem;
+    background: #ff9c47;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.content {
+    font-size: 2rem;
+}
+
+.author {
+    font-weight: bold;
+    text-decoration: orange underline;
+}
+
+.time {
+    color: #ffffff;
+    font-size: 1.4rem;
+    text-align: right;
+}
+
+.time span {
+    font-style: italic;
+}
+
+.formLogin {
+    margin: 2rem 22rem 0 22rem;
+    background: #ffc684;
+    color: #ffffff;
+    font-size: 2rem;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 7px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+hr {
+    width: 85%;
+    border: 1px solid #ffe0c8;
+    margin: 5rem 1rem 4rem 1rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+label {
+    color: white;
+}
+
+.getInfo {
+    color: black;
+    font-size: 2rem;
+    padding: 0.4rem;
+    margin-bottom: 2rem;
+    border-radius: 7px;
+}
+
+.formBtn {
+    width: 55%;
+    padding: 1rem;
+    color: #ffc684;
+    background: white;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.formBtn:hover {
+    color: white;
+    background-color: #ff9c47;
+    transform: scale(1.1);
+}
+
+.cardBtn {
+    font-size: 2.5rem;
+    padding: 1rem;
+    color: #ffc684;
+    background: white;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.cardBtn:hover {
+    color: white;
+    background-color: #ff9c47;
+    transform: scale(1.1);
+}
+
+
+.menuButton {
+    list-style: none;
+    text-align: center;
+}
+
+.menuButton a{
+    text-decoration: none;
+    font-size: large;
+}
+
+.title a{
+    font-size: 3rem;
+    list-style: none;
+    text-decoration: none;
+}
+
+.setMessage {
+    width: 55%;
+    height: 10%;
+    background: #ff9c47;
+    font-size: 2rem;
+    color: #ffffff;
+}
