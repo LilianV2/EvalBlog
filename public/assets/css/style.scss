@@ -417,6 +417,9 @@ header {
     width: 95%;
     margin-bottom: 5rem;
     background: $cards;
+    border-radius: 7px;
+    box-shadow: 2px 2px 8px rgba(black, .3);
+
     h1 {
       font-size: 3rem;
     }

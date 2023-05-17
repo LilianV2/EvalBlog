@@ -31,12 +31,8 @@ S
 #vendor/composer/autoload_static.php,b\e\be2b2e999491d2e0d80d9198dd809e411299111c
 O
 vendor/composer/ClassLoader.php,5\9\5957887ba179d298d3ad0aa2501e9e60a163ee77
-P
- Model/Manager/CommentManager.php,c\a\ca66e2a067a6e65179d92cac8025c8f50f11b2c2
 B
 composer-setup.php,7\7\773941c2decd4af669a0c6f173ccb200b30f796b
-<
-Model/DB.php,2\0\20b6b666b719934a15a14207641644e718b4acf5
 M
 vendor/composer/installed.php,f\1\f1e920340fcfc7c307af59582a3078c9791c232d
 U
@@ -45,15 +41,25 @@ E
 View/user/listing.php,d\0\d06cc2eec4d35ca4c08600e82578733d0b794993
 R
 "vendor/composer/platform_check.php,1\2\12a7f430b28be9061c2785aed610d83e5c0f1cdc
-E
-Model/Entity/User.php,d\3\d32f2107305f1dce1b26e5b7a1c2e416b0de594b
+Q
+!Controller/AbstractController.php,0\9\0961de1ff07c85c36bc5d01726ea246aeccc9ffe
+P
+ Model/Manager/CommentManager.php,c\a\ca66e2a067a6e65179d92cac8025c8f50f11b2c2
+I
+View/articles/listing.php,f\1\f15d8bb26b617cedba199a5bf665ab5030dbc84d
+?
+View/layout.php,c\9\c9a7fe7a865e764f1457b74aba9c255491ea4d18
+C
+View/home/index.php,b\1\b152d5a7dd6ae26265d84e70bd4d68fac4e41f5e
 @
 public/index.php,0\e\0e61f67641b441bb3ee38e903c594d99cafa14b4
+G
+public/assets/js/app.js,0\3\03fbef75b5bc7b97296692c64b5da91147876f58
 H
 Model/Entity/Comment.php,e\e\ee80a6be8000a1a147c8d14d4982b1bc73ce60f3
-N
-Controller/LoginController.php,8\6\860d2cc2b534c88e304371151308f5f1f874faf2
-D
-View/login/login.php,9\2\92032379b3710c24918fd8e3f9d1d5c52233663d
+L
+View/admin/modifyArticle.php,9\d\9d3a1ad42339c1e761683c82609fd4acd441a6ea
 G
 View/login/register.php,3\8\38fa226e2ac1348b1216131397e3890dd2f44480
+D
+View/login/login.php,9\2\92032379b3710c24918fd8e3f9d1d5c52233663d

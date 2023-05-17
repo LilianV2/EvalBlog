@@ -361,6 +361,8 @@ header nav ul li a#title {
   width: 95%;
   margin-bottom: 5rem;
   background: #e1e1e1;
+  border-radius: 7px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 .article-container .article-content h1 {
   font-size: 3rem;

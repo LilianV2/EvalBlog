@@ -48,30 +48,29 @@ class LoginController extends AbstractController
 
     public function log()
     {
-        $sql = "SELECT id, pseudo, password, email, is_admin FROM user WHERE email = :email";
+        $sql = "SELECT id, pseudo, password, email FROM user WHERE email = :email";
         $req = DB::getInstance()->prepare($sql);
 
-        $email = strip_tags($_POST['email'] ?? ''); // Supprime toutes les balises HTML potentiellement dangereuses
-        $pass_form = strip_tags($_POST['password'] ?? ''); // Récupère le mot de passe entré dans le formulaire et supprime les balises HTML potentiellement dangereuses
+        $email = strip_tags($_POST['email'] ?? ''); // delete HTML tags
+        $pass_form = strip_tags($_POST['password'] ?? ''); // get password and delete HTML tags
 
         $req->bindParam(':email', $email);
 
-        $pass_form = strip_tags($pass_form); // Supprime les balises HTML et PHP
-        password_hash($pass_form, PASSWORD_BCRYPT); // Step 2 on le filtre
+        $pass_form = strip_tags($pass_form); // delete HTML and PHP tags
+        password_hash($pass_form, PASSWORD_BCRYPT);
 
-        if ($email && $pass_form) { // Check si les champs on était trouvé
+        if ($email && $pass_form) {
             if ($req->execute()) {
-                $userData = $req->fetch(); // Met notre $req en tableau associatif
-                if (!empty($userData)) { // Va check si c'est vrai
-                    if (password_verify($pass_form, $userData['password'])) { // Check si le mot de passe en clair > filtrer et égal aux mot de passe enregistrer dans la bdd
-                        $id = $userData['id']; // Récupère l'ID de l'utilisateur
+                $userData = $req->fetch(); // make the request into an array
+                if (!empty($userData)) {
+                    if (password_verify($pass_form, $userData['password'])) { // check if the password equals to the one in the db
+                        $id = $userData['id']; // get user ID
 
                         $_SESSION["connected"] = true;
 
                         $_SESSION["user"] = [
                             "name" => $userData['pseudo'],
                             "email" => $userData['email'],
-                            "is_admin" => $userData['is_admin'],
                             "id_user" => $userData['id'],
                         ];
 
@@ -79,7 +78,7 @@ class LoginController extends AbstractController
 
                         echo("<div> Vous vous êtes login avec succès ! </div>");
                     } else {
-                        echo("<div> Mot de passe incorrect.. </div>");
+                        echo("<div> Mot de passe incorrect </div>");
                         $this->display('login/login');
                     }
                 } else {
@@ -87,11 +86,11 @@ class LoginController extends AbstractController
                     $this->display('login/login');
                 }
             } else {
-                echo "<div> Aucun compte associé à ce nom d'utilisateur </div>";
+                echo "<div> Utilisateur introuvable </div>";
                 $this->display('login/login');
             }
         } else {
-            echo "<div> Aucun champ trouvé..  </div>";
+            echo "<div> Veuillez remplir les champs  </div>";
             $this->display('login/login');
         }
     }
@@ -103,10 +102,9 @@ class LoginController extends AbstractController
                 $username = strip_tags($_POST['username']);
                 $user_email = strip_tags($_POST['email']);
 
-
-                // Vérifier si l'email est valide
+                // check if the email is ok
                 $username = preg_replace('/[^a-zA-Z0-9]+/', '', strtr(trim($_POST['username']), 'àáâäãåçèéêëìíîïñòóôöõøùúûüýÿ', 'aaaaaaceeeeiiiinooooouuuuyy'));
-                $user_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL); // Filtrer l'adresse e-mail pour retirer les caractères spéciaux
+                $user_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL); // filter html chars
                 if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
                     echo "<div> Cette adresse email n'est pas valide. </div>";
                     return;
@@ -117,7 +115,7 @@ class LoginController extends AbstractController
                     return;
                 }
 
-                // Vérifier si le nom d'utilisateur existe déjà
+                // check if the user already exists
                 $sql = "SELECT id FROM user WHERE pseudo = :username";
                 $req = DB::getInstance()->prepare($sql);
 
@@ -130,7 +128,7 @@ class LoginController extends AbstractController
                     return;
                 }
 
-                // Vérifier si l'adresse email existe déjà
+                // check if the email already exists
                 $sql = "SELECT id FROM user WHERE email = :email";
                 $req = DB::getInstance()->prepare($sql);
 
@@ -142,17 +140,13 @@ class LoginController extends AbstractController
                     return;
                 }
 
-                // Vérifier les deux mots de passe
+                // check password
                 if ($_POST['password']){
-                    $username = htmlspecialchars($_POST['username'], ENT_QUOTES); // Convertir les caractères spéciaux en entités HTML
-                    // Les vérifications ont été passées, on peut ajouter l'utilisateur à la base de données
+                    $username = htmlspecialchars($_POST['username'], ENT_QUOTES);
                     $pass = $_POST['password'];
                     $hash = password_hash($pass, PASSWORD_BCRYPT);
-
-
                     $sql = "INSERT INTO user (pseudo, password, email) VALUES (:username, :password, :email)";
                     $req = DB::getInstance()->prepare($sql);
-
 
                     $req->bindParam(':username', $username);
                     $req->bindParam(':password', $hash);

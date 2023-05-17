@@ -8,6 +8,12 @@ use App\Model\Entity\Article;
 
 class ArticleManager
 {
+
+    public function __construct()
+    {
+        $this->userManager = new UserManager();
+    }
+
     public function getAll(): array
     {
         $articles = [];
@@ -16,13 +22,14 @@ class ArticleManager
         if ($request) {
             $data = $request->fetchAll();
             foreach ($data as $articleData) {
-                $author = (new UserManager())->getUserById($articleData['user_id']);
-                $articles[] = (new Article())
-                    ->setId($articleData['id'])
-                    ->setContent($articleData['content'])
-                    ->setTitle($articleData['title'])
-                    ->setAuthor($author)
-                ;
+                $author = $this->userManager->getUserById($articleData['user_id']);
+                if ($author) {
+                    $articles[] = (new Article())
+                        ->setId($articleData['id'])
+                        ->setContent($articleData['content'])
+                        ->setTitle($articleData['title'])
+                        ->setAuthor($author);
+                }
             }
         }
 

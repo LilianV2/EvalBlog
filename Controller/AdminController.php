@@ -55,7 +55,6 @@ class AdminController extends AbstractController
                     $content = $_POST['content'];
                     $user_id = $_SESSION["user"]["id_user"];
 
-                    // Ajouter l'article dans la base de données avec le numéro d'image
                     $sql = "INSERT INTO article (title, content, user_id) VALUES (:title, :content, :user_id)";
                     $req = DB::getInstance()->prepare($sql);
 
@@ -109,8 +108,6 @@ class AdminController extends AbstractController
 
         } else {
 
-            //Utiliser JavaScript pour masquer le message d'avertissement après quelques secondes
-            echo '<script>setTimeout(function(){ document.querySelector(".warning").style.display = "none"; }, 4000);</script>';
             // Afficher le formulaire de connexion
             $this->display("login/login");
         }

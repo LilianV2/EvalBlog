@@ -10,7 +10,7 @@ class DB
     private static string $server = 'localhost';
     private static string $username = 'root';
     private static string $password = '';
-    private static string $database = 'blog';
+    private static string $database = 'EvalBlog';
     private static ?PDO $db = null;
 
     public static function getInstance(): ?PDO {

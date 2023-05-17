@@ -63,15 +63,17 @@ class UserManager
         $stmt = DB::getInstance()->prepare($sql);
         $stmt->bindParam(':id', $id);
         if ($stmt->execute()) {
-            $uDate = $stmt->fetch();
-            return (new User)
-                ->setId($uDate['id'])
-                ->setPassword($uDate['password'])
-                ->setEmail($uDate['email'])
-                ->setPseudo($uDate['pseudo'])
-            ;
+            $userData = $stmt->fetch();
+            if ($userData) {
+                return (new User())
+                    ->setId((int)$userData['id'])
+                    ->setPassword($userData['password'])
+                    ->setEmail($userData['email'])
+                    ->setPseudo($userData['pseudo']);
+            }
         }
         return null;
     }
+
 
 }
